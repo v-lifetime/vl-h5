@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        padding: 0 2px;
+      }
+      .box {
+        height: 100%;
+      }
+      footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <canvas id="myChart" height="540px"></canvas>
+    </div>
+    <footer>
+      <div>小红书号</div>
+      <div>注：数据来源 gotohui 由 &copy; 收集整理</div>
+      <div>数据侵权请联系作者删除喔</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script>
+      const data = {
+        labels: [
+          '04 厦门',
+          '06 杭州',
+          '08 南京',
+          '09 东莞',
+          '10 宁波',
+          '13 苏州',
+          '14 天津',
+          '16 合肥',
+          '19 青岛',
+          '23 武汉',
+          '24 无锡',
+          '26 佛山',
+          '29 成都',
+          '30 大连',
+          '33 西安',
+          '40 昆明',
+          '41 重庆',
+          '43 郑州',
+          '59 沈阳',
+          '60 长沙',
+        ],
+        datasets: [
+          {
+            axis: 'y',
+            label: '2022年05月',
+            data: [
+              50680, 40126, 34001, 28533, 27438, 24233, 22991, 20974, 20397,
+              18730, 18632, 17670, 16813, 16718, 16348, 13937, 13910, 13851,
+              11975, 11957,
+            ],
+            fill: false,
+            backgroundColor: [
+              // 1 个5万
+              'rgba(255, 99, 132, 0.2)',
+              // 1个4万
+              'rgba(255, 159, 64, 0.2)',
+              // 1个3万
+              'rgba(255, 205, 86, 0.2)',
+              //
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+
+              //
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+
+              'rgba(201, 203, 207, 0.2)',
+            ],
+            borderColor: [
+              'rgb(255, 99, 132)',
+              'rgb(255, 159, 64)',
+              'rgb(255, 205, 86)',
+
+              'rgb(75, 192, 192)',
+              'rgb(75, 192, 192)',
+              'rgb(75, 192, 192)',
+              'rgb(75, 192, 192)',
+              'rgb(75, 192, 192)',
+              'rgb(75, 192, 192)',
+              'rgb(153, 102, 255)',
+              'rgb(153, 102, 255)',
+              'rgb(153, 102, 255)',
+              'rgb(153, 102, 255)',
+              'rgb(153, 102, 255)',
+              'rgb(54, 162, 235)',
+              'rgb(54, 162, 235)',
+              'rgb(54, 162, 235)',
+              'rgb(54, 162, 235)',
+              'rgb(54, 162, 235)',
+              'rgb(54, 162, 235)',
+
+              'rgb(201, 203, 207)',
+            ],
+            borderWidth: 1,
+          },
+        ],
+      }
+      const config = {
+        type: 'bar',
+        data,
+
+        options: {
+          indexAxis: 'y',
+          plugins: {
+            title: {
+              display: true,
+              text: '全国房价排行榜',
+            },
+          },
+        },
+      }
+      Chart.register(ChartDataLabels)
+      const myChart = new Chart(document.getElementById('myChart'), config)
+    </script>
+  </body>
+</html>
