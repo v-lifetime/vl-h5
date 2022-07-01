@@ -1,0 +1,22 @@
+{
+  "name": "vanlee-h5",
+  "version": "0.0.2",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanlee-blog/vanlee-h5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanlee-blog/vanlee-h5/issues"
+  },
+  "homepage": "https://github.com/vanlee-blog/vanlee-h5#readme",
+  "dependencies": {
+    "@antv/f2": "^4.0.25"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.18.6"
+  }
+}
