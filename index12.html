@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&copy; 逃离北京去长沙</title>
+    <style>
+        :root {
+  --primary-color: #212121;
+  --background-color: #111;
+  --font: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background-color);
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+}
+
+/* Timeline Container */
+.timeline {
+  background: var(--primary-color);
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Card container */
+.card {
+  position: relative;
+  max-width: 100%;
+}
+
+/* setting padding based on even or odd */
+.card:nth-child(odd) {
+  padding: 30px 0 30px 30px;
+}
+.card:nth-child(even) {
+  padding: 30px 30px 30px 0;
+}
+/* Global ::before */
+.card::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  border: solid orangered;
+}
+
+/* Setting the border of top, bottom, left */
+.card:nth-child(odd)::before {
+  left: 0px;
+  top: -4.5px;
+  bottom: -4.5px;
+  border-width: 5px 0 5px 5px;
+  border-radius: 50px 0 0 50px;
+}
+
+/* Setting the border of top, bottom, right */
+.card:nth-child(even)::before {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-width: 5px 5px 5px 0;
+  border-radius: 0 50px 50px 0;
+}
+
+/* Removing the border if it is the first card */
+.card:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's odd */
+.card:last-child:nth-child(odd)::before {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's even */
+.card:last-child:nth-child(even)::before {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Information about the timeline */
+.info {
+  display: flex;
+  flex-direction: column;
+  background: #333;
+  color: gray;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Title of the card */
+.title {
+  color: orangered;
+  position: relative;
+}
+
+/* Timeline dot  */
+.title::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 999px;
+  border: 3px solid orangered;
+}
+
+/* text right if the card is even  */
+.card:nth-child(even) > .info > .title {
+  text-align: right;
+}
+
+/* setting dot to the left if the card is odd */
+.card:nth-child(odd) > .info > .title::before {
+  left: -45px;
+}
+
+/* setting dot to the right if the card is odd */
+.card:nth-child(even) > .info > .title::before {
+  right: -45px;
+}
+.text-red{
+    color: red;
+    font-weight: bold;
+}
+.text-delete{
+    text-decoration: line-through;
+    color: black;
+}
+.text-guess{
+    color: yellow;
+    font-weight: bold;
+}
+    </style>
+  </head>
+  <body>
+<div class="timeline">
+  <div class="outer">
+    <div class="card">
+      <div class="info">
+        <h3 class="title">2022年04月19日&nbsp;&nbsp;[第一次]</h3>
+        <p>【原文件】《关于实施强省会战略支持长沙市高质量发展的若干意见》 </p>
+        <p>【它来自】HN省W、省ZF </p>
+        <p>【划重点】放宽人才落户限制，具有 <span class="text-red">大专及以上学历</span> 在长沙就业人员可即时申报落户，享受在长沙购房资格。推动高层次人才在长株潭三市自由落户。</p>
+        <p>【简单说】放开落户，符合《GJ十四五》发展规划。你是专科或者本科或者更高的学历 长沙都欢迎你</p>
+        <p>【利好点】更多的人有资格落户到长沙，如果在长沙工作 截止发笔记<span class="text-red">户口1年 + 社保1年</span>或者<span class="text-red">户口1年 + 个税1年</span> 或者<span class="text-red">纯户口2年 </span>等等不详细说了</p>
+
+      </div>
+    </div>
+    <div class="card">
+        <div class="info">
+          <h3 class="title">[第二次]&nbsp;&nbsp;2022年05月07日</h3>
+          <p>【原文件】《长沙市新建商品房交房交证实施方案》（首发2021年1月1日起、2022-05-07更新调整）</p>
+          <p>【它来自】 长沙市住建局 长沙市RMZF</p>
+            <p>【划重点】限购区域内家庭购买第2套商品住房的间隔时间既认网签备案、又认权属登记，均按满4年计算</p>
+            <p>【简单说】<span class="text-red">长沙家庭可能</span>提前1到2年时间拥有二套房购房资格</p>
+            <p>【利好点】已经是长沙的家庭们</p>
+        </div>
+      </div>
+    <div class="card">
+      <div class="info">
+        <h3 class="title">2022年05月08号&nbsp;&nbsp;[第三次]</h3>
+        <p>【原文件】《关于推进长沙市租赁住房多主体供给多渠道保障盘活存量房的试点实施方案》</p>
+        <p>【它来自】长沙市住建局 长沙市培育和发展住房租赁市场工作领导小组</p>
+        <p>【划重点】明确长沙<span class="text-red"> 2套及以下(小于等于2)</span>住房家庭盘活一套用于租赁住房后，可再购买一套住房。 以<span class="text-red"> 家庭</span>为单位，盘活一套或多套住房用作租赁的，暂按“一户核减一套”的原则核减家庭住房总套数，即有多套住房出租的家庭，在家庭住房套数计算时均只核减一套，不影响多套住房盘活用作租赁房。</p>
+        <p>【简单说】房子租出去，还能买 这相当于给了2套及以下改善型家庭一张“房票”。</p>
+        <p>【利好点】已经在长沙有房的</p>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="info">
+        <h3 class="title">[未来时]&nbsp;&nbsp;2022年06月09号</h3>
+        <p>【原文件】《关于进一步促进消费持续恢复的若干措施》</p>
+        <p>【它来自】湖南省发展和改革委员会  湖南省商务厅</p>
+        <p>【划重点】四、稳定住房消费
+            采取支持人才购房、财政补贴、展销促销等政策措施，<span class="text-red"> 因城施策实施差别化</span>住房信贷政策，更好满足居民合理住房需求。（各市州人民政府组织实施）
+            <span class="text-delete">引导金融机构下调住房贷款利率，降低住房商业贷款首付比例（省地方金融监管局、各金融机构组织实施）。</span> 
+            完善长租房政策，增加保障性租赁住房供给。（省住房城乡建设厅、各市州人民政府组织实施）支持长沙市恢复执行<span class="text-red">  二套房契税优惠税率</span>
+           。（省住房城乡建设厅、省财政厅、省税务局、长沙市人民政府组织实施）鼓励<span class="text-red"> 提高住房公积金最高贷款额度</span>，首套房可提可贷。（省住房城乡建设厅组织实施）鼓励具备条件的市州探索“二孩”“三孩”家庭的购房支持政策。（各市州人民政府组织实施）</p>
+        <p>【简单说】它是未来时！！整个6月份已经过去，今天7月4号，《措施》发出后，很多自媒体作者都说什么6月底出台，现在7月了，貌似长沙官方还没出</p>
+        <p>【利好点】买房子的吧，因为如果公积金能贷的更多，交更少的税、ZF再给点补贴 、房贷利率稍微在降一点 已经好多了  </p>
+        <p class="text-guess">【大胆瞎猜】1、首付比例9.9的几率不会下调（还是3成）2、二套房契税优惠税率8.8会吧 3、公积金可能会提6.6的几率吧 4、生小孩这个 1.1的几率会吧 5、补贴5.5 的几率会吧 6、房贷利率到4.25 4.4的几率会吧</p>
+      </div>
+    </div>
+  
+  </div>
+  </body>
+</html>

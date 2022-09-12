@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .chart-box {
+        padding: 0px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chart-box">
+      <div id="container" style="min-width: 400px; height: 400px"></div>
+    </div>
+    <script src="https://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+    <script src="https://cdn.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+    <script src="https://cdn.highcharts.com.cn/highcharts/modules/oldie.js"></script>
+    <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+    <script>
+      var chart = Highcharts.chart('container', {
+        chart: {
+          type: 'bar',
+        },
+        title: {
+          text: '长沙市轨道交通6号线',
+        },
+        subtitle: {
+          text: '沿线在售房子',
+        },
+        xAxis: {
+          categories: [
+            '谢家桥',
+            '象鼻窝',
+            '中塘',
+            '一师范西校区',
+            '长庆',
+            '和馨园',
+            '长丰',
+            '麓谷体育公园',
+            '麓谷公园',
+          ],
+          title: {
+            text: null,
+          },
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: '均价 (元/平)',
+            align: 'high',
+          },
+          labels: {
+            overflow: 'justify',
+          },
+        },
+        tooltip: {
+          valueSuffix: ' 百万',
+        },
+        plotOptions: {
+          bar: {
+            dataLabels: {
+              enabled: true,
+              allowOverlap: true, // 允许数据标签重叠
+            },
+          },
+        },
+        legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'top',
+          x: -40,
+          y: 100,
+          floating: true,
+          borderWidth: 1,
+          backgroundColor:
+            (Highcharts.theme && Highcharts.theme.legendBackgroundColor) ||
+            '#FFFFFF',
+          shadow: true,
+        },
+        series: [
+          {
+            name: '东方红梅西枫林',
+            data: [0, 0, 0, 0, 12500, 0],
+          },
+          //   {
+          //     name: '1900 年',
+          //     data: [133, 156, 947, 408, 6],
+          //   },
+          //   {
+          //     name: '2008 年',
+          //     data: [973, 914, 4054, 732, 34],
+          //   },
+        ],
+      })
+    </script>
+  </body>
+</html>

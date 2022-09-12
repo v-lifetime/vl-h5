@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css" />
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.f6-0.0.18/dist/f6.js"></script>
+    <script>
+      console.log('F6', F6)
+      const data = {
+        // 点集
+        nodes: [
+          {
+            id: 'node1', // String，该节点存在则必须，节点的唯一标识
+            x: 100, // Number，可选，节点位置的 x 值
+            y: 200, // Number，可选，节点位置的 y 值
+          },
+          {
+            id: 'node2', // String，该节点存在则必须，节点的唯一标识
+            x: 300, // Number，可选，节点位置的 x 值
+            y: 200, // Number，可选，节点位置的 y 值
+          },
+        ],
+        // 边集
+        edges: [
+          {
+            source: 'node1', // String，必须，起始点 id
+            target: 'node2', // String，必须，目标点 id
+          },
+        ],
+      }
+
+      const graph = new F6.Graph({
+        container: 'container', // String | HTMLElement，必须，在 Step 1 中创建的容器 id 或容器本身,如果为小程序，则传null或者不传
+        width: 800, // Number，必须，图的宽度
+        height: 500, // Number，必须，图的高度
+      })
+
+      graph.data(data) // 读取 Step 2 中的数据源到图上
+      graph.render() // 渲染图
+    </script>
+  </body>
+</html>
